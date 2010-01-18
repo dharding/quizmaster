@@ -1,0 +1,4 @@
+haml
+authlogic  
+acts-as-taggable-on  
+will_paginate
