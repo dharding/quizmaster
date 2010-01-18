@@ -1,0 +1,9 @@
+#game
+  %h1 New Game
+  = error_messages_for "game", :header_message => "Unable to Create Game", :message => "We had some problems creating the game:"
+  - form_for @game do |f|
+    = render :partial => 'form', :object => f
+    .clear
+    .form_item
+      .button
+        = f.submit "Add Game"

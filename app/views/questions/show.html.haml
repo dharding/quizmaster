@@ -1,0 +1,42 @@
+= fl
+- if @game_question.nil?
+  %h1 Final Results
+  - @game.score.each_with_index do |team_points, i|
+    &= "#{i + 1}. #{team_points.first.name} (#{team_points.last})"
+    .clear
+- else
+  = "Round #{@game.current_round} of #{@game.rounds}, Question #{@game.current_question} of #{@game.questions_per_round}"
+  - if current_user.admin?
+    .ask!= @game_question.question.ask
+    .points= pluralize(@game_question.question.difficulty, "points")
+    - if @game_question.locked?
+      - @game_question.answers.each do |a|
+        .answer
+          %h3.team&= a.team.name
+          .content!= a.content
+          .action.fl
+            - unless a.correct?
+              = button_to "Correct", correct_game_question_answer_path(@game, @game_question.question, a)
+        .clear
+      .clear
+      = button_to "Next Question", next_game_questions_path(@game)
+    - else
+      = button_to "Lock Question", lock_game_questions_path(@game)
+  - else
+    %h1&= @team.name
+    %h2!= @game_question.question.ask
+    %h1 Answer
+    - if @answer.new_record? && !@game_question.locked?
+      = error_messages_for "answer", :header_message => "Unable to Submit Answer", :message => "We had some problems submitting your answer:"
+      - form_for @answer, :url => answer_game_question_path(@game, @game_question.question) do |f|
+        = render :partial => 'answers/form', :object => f
+        .clear
+        .form_item
+          .button
+            = f.submit "Submit Answer"
+    - else
+      - if @answer.nil? || @answer.content.blank?
+        No Answer
+      - else
+        != @answer.content
+      = button_to "Continue", current_game_questions_path(@game), :method => :get

@@ -1,0 +1,9 @@
+#team
+  %h1 New Question
+  = error_messages_for "question", :header_message => "Unable to Create Question", :message => "We had some problems creating the question:"
+  - form_for @question do |f|
+    = render :partial => 'form', :object => f
+    .clear
+    .form_item
+      .button
+        = f.submit "Add Question"

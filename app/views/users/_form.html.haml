@@ -1,0 +1,8 @@
+/ - field_set_tag "General", :id => "general" do
+= form_item form, :first_name, :required => true
+= form_item form, :last_name, :required => true
+- if form.object.new_record?
+  = form_item form, :email, :required => true
+  = form_item form, :email_confirmation, :required => true if form.object.new_record?
+  = form_item form, :password, :required => form.object.new_record?, :type => :password
+  = form_item form, :password_confirmation, :required => form.object.new_record?, :type => :password

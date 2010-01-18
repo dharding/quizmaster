@@ -1,0 +1,9 @@
+#game
+  %h1 Edit Game
+  = error_messages_for "game", :header_message => "Unable to Update Game", :message => "We had some problems updating the game:"
+  - form_for @game do |f|
+    = render :partial => 'form', :object => f
+    .clear
+    .form_item
+      .button
+        = f.submit "Update Game"

@@ -1,0 +1,9 @@
+#team
+  %h1 Edit Question
+  = error_messages_for "question", :header_message => "Unable to Update Question", :message => "We had some problems updating the question:"
+  - form_for @question do |f|
+    = render :partial => 'form', :object => f
+    .clear
+    .form_item
+      .button
+        = f.submit "Update Question"

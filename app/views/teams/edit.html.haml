@@ -1,0 +1,9 @@
+#team
+  %h1 Edit Team
+  = error_messages_for "team", :header_message => "Unable to Update Team", :message => "We had some problems updating the team:"
+  - form_for @team do |f|
+    = render :partial => 'form', :object => f
+    .clear
+    .form_item
+      .button
+        = f.submit "Update Team"

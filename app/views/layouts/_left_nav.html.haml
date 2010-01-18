@@ -1,0 +1,12 @@
+- if logged_in? && current_user.admin?
+  %ul
+    = nav_item "Home", {:controller => 'home'}
+    = nav_item "Games", {:controller => 'games'}
+    = nav_item "Questions", {:controller => 'questions'}
+    = nav_item "Teams", {:controller => 'teams'}
+- elsif logged_in? && !@game.nil?
+  %ul
+    = nav_item "Current Game", {:controller => 'home'}
+    - @game.score.each_with_index do |team_points, i|
+      %li&= "#{i + 1}. #{team_points.first.name} (#{team_points.last})"
+      .clear

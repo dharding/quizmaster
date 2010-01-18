@@ -1,0 +1,406 @@
+///////////////////////////////////////////////////////////////////////////////
+// GENERAL
+///////////////////////////////////////////////////////////////////////////////
+html, body
+  height: 100%
+  color: #222
+  font-family: Georgie, "Times New Roman", Times, serif
+  
+h1
+  border-bottom: 1px solid #ccc
+  color: #555
+
+dl
+  clear: left
+  dt
+    font-weight: bolder
+    float: left
+  dd
+    float: left
+    margin-left: 0.8em
+
+.fl
+  float: left
+
+.fr
+  float: right
+
+///////////////////////////////////////////////////////////////////////////////
+// LAYOUT
+///////////////////////////////////////////////////////////////////////////////
+#header
+  background-color: #eee
+  height: 75px
+  border: 1px solid #ccc
+  h1
+    border: none
+
+/ #header a
+  / color: #
+  
+#content
+  overflow: hidden
+  background-color: #EFFAFB
+  border-left: 1px solid #ccc
+  border-right: 1px solid #ccc
+  
+#ln
+  border: 1px solid #ccc
+  ul
+
+    list-style: none
+    list-style-type: none
+    text-transform: uppercase
+    text-align: left
+    li
+      line-height: 25px
+      margin-left: 0
+      padding-left: 10px
+      border-bottom: 1px solid #abbfc9
+      display: block
+      a
+        font-size: 0.8em
+        font-weight: bold
+        text-decoration: none
+        color: #666
+    li.active
+      background-color: #e3e3e3
+      a
+        color: #000
+    li.last
+      / height: 100%
+
+#mc
+  / margin-left: 0
+  / margin-right: 0
+  padding: 10px
+  width: 738px
+  background-color: #fff
+  border-left: 1px solid #ccc
+  border-right: 1px solid #ccc
+  min-height: 400px
+  
+#rn
+  margin-left: 0
+  margin-right: 0
+  background-color: #fff
+  
+#footer
+  float: left
+  height: 50px
+  color: #555
+  background-color: #eee
+  border: 1px solid #ccc
+
+#footer a
+  color: #B1D035
+
+#footer p
+  padding: 0.3em
+  
+#intro_video
+  border-bottom: 1px solid #ccc
+  margin-bottom: 10px
+  
+#flash
+  margin: 10px
+  background-color: #E9F7FE
+  border: 1px solid #C1DBF2
+  padding: 5px
+  clear: both
+  
+.ask
+  font-size: 3.5em
+  p
+    margin: 0
+  .points
+    
+
+///////////////////////////////////////////////////////////////////////////////
+// TABLES
+///////////////////////////////////////////////////////////////////////////////
+table.list
+  width: 95%
+  margin-left: auto
+  margin-right: auto
+  thead
+    tr th
+      border-bottom: 1px solid #ccc
+    tr.hdr
+      background-color: #e3e3e3
+      border-left: 1px solid #ccc
+      border-right: 1px solid #ccc
+  tbody
+    tr
+      border-bottom: 1px solid #ccc
+      td
+        padding: 0.3em
+    tr.even
+      background-color: #eee
+  tfoot
+    tr
+      background-color: #c3d9ff
+      border-left: 1px solid #ccc
+      border-right: 1px solid #ccc
+
+    
+
+///////////////////////////////////////////////////////////////////////////////
+// FORMS
+///////////////////////////////////////////////////////////////////////////////
+input[type=submit], button
+  border-top: 0
+  border-left: 0
+  border-bottom: 0
+  border-right: 0
+  margin: 0
+  padding: 0
+  height: 20px
+  
+.formError
+  color: red
+
+.button, .button-to div, input[type="button"]
+  margin-top: 5px
+  float: right
+  border: 1px solid #ccc
+  button, input[type=submit]
+    background-color: #e3e3e3
+    text-align: center
+    border: none
+    color: #000
+    text-transform: uppercase
+    padding: 3px 10px
+    cursor: pointer
+
+button
+  cursor: pointer
+
+input[type="text"], input[type="password"], textarea
+  padding: 2px
+  border: 1px solid #bbb
+  
+input[type="file"]
+  border: none
+  
+.file_uploader
+  input[type=file]
+    position: relative
+    text-align: right
+    -moz-opacity: 0
+    filter: alpha(opacity: 0)
+    opacity: 0
+    z-index: 2
+    width: 100%
+  .fake_file_uploader
+    position: relative
+    width: 100%
+    margin-top: -28px
+    .filename
+      overflow: hidden
+      width: 200px
+      float: left
+      margin-top: 5px
+
+.errorExplanation
+  background-color: #FFEA5B
+  border: 1px solid #CAC479
+  padding: 5px
+  margin-bottom: 10px 
+  clear: both
+  
+.errorExplanation h2
+  font-size: 1.5em
+  margin-bottom: 0.3em
+  
+.errorExplanation ul
+  margin-bottom: 0
+  
+.errorExplanation p
+  margin-bottom: 5px
+  
+fieldset
+  clear: left
+  border-top: 1px solid #ccc
+  border-bottom: 1px solid #ccc
+  padding-left: 1.0em
+  padding-top: 0
+  padding-bottom: 1.0em
+  margin-bottom: 4.0em
+  legend
+    text-transform: uppercase
+    font-weight: bolder
+    padding-left: 0.3em
+    padding-right: 0.3em
+
+.form_item
+  padding-top: 10px
+  clear: left
+  width: 100%
+  .label
+    padding-right: 5px
+    float: left
+    width: 150px
+    label
+      float: right
+      padding-right: 4px
+      text-align: right
+    em
+      display: none
+      color: red
+      float: right
+  .field
+    float: left
+    margin-right: 10px
+    input.zipcode
+      width: 8em
+  .message
+    float: left
+    text-align: left
+  .matrix
+    label
+      float: left
+      text-align: left
+      width: auto
+      padding-left: 2px
+      padding-right: 10px
+    input
+      float: left
+
+.form_item.required .label 
+  label
+    padding-right: 0
+  em
+    display: inline
+    
+.form_item.terms
+  .label
+    width: 300px
+.form_item.ack, form_item.terms
+  .label
+    width: 300px
+      
+input[type=text]:focus, input[type=password]:focus, textarea:focus
+  border-color: #666666
+  
+.privacy
+  font-size: 0.8em
+  font-style: italic
+  color: #666
+  line-height: 2.0em
+  
+///////////////////////////////////////////////////////////////////////////////
+// PROFILE AND KNOWLEDGE
+///////////////////////////////////////////////////////////////////////////////
+.member
+  clear: left
+  
+#registration
+  overflow: hidden
+  padding: 10px
+  margin-top: 1.0em
+
+#profile 
+  .message
+    display: none
+  img
+    border: 2px solid #ccc
+    float: left
+    margin-right: 1.0em
+  .namebar
+    .name
+      float: left
+    .actions
+      float: right
+    font-size: 1.2em
+    font-weight: bolder
+    overflow: hidden
+    form
+      float: right
+      overflow: hidden
+  .details
+    margin-top: 1.0em
+    overflow: hidden
+  .summary dl
+    padding-top: 1.0em
+    overflow: hidden
+    margin-bottom: 1.0em
+    margin-top: 0
+    dt, dd
+      clear: left
+
+///////////////////////////////////////////////////////////////////////////////
+// SEARCH
+///////////////////////////////////////////////////////////////////////////////
+#mini-beta-signup, #mini-search
+  padding-left: 10px
+  padding-right: 10px
+  border-top: 1px solid #ccc
+  .strong
+    font-size: 0.75em
+    color: #6CBD45
+    font-weight: bold
+    text-transform: uppercase
+  .form_item
+    overflow: hidden
+    margin-bottom: 0.3em
+    text-align: right
+    font-size: 0.75em
+    label
+      line-height: 20px
+      float: right
+      margin-right: 3px
+      em
+        color: red
+    input
+      width: 95px
+      clear: right
+      float: right
+
+#mini-search
+  padding: 0
+  .advanced
+    display: none
+
+#mini-search .form
+  padding: 10px
+
+#mini-search .fr
+  cursor: pointer
+
+#mini-search .header
+  padding: 3px
+  background: url(/images/tabs/tab3.gif) repeat-x
+  overflow: hidden
+  color: #196790
+  text-transform: uppercase
+  font-weight: bold
+  font-size: 0.8em
+  .fr
+    padding-top: 1px
+    font-size: 0.8em
+
+///////////////////////////////////////////////////////////////////////////////
+// LOGIN
+///////////////////////////////////////////////////////////////////////////////
+.login
+  margin: 10px
+
+.login label
+  float: right
+
+.login .form_item
+  margin-top: 10px
+  margin-bottom: 10px
+
+.login input
+  width: 154px
+
+.login .errorExplanation
+  h2
+    display: none
+  p
+    display: none
+  ul
+    list-style: none
+    list-style-type: none

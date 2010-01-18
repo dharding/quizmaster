@@ -1,0 +1,14 @@
+= javascript_include_tag 'tiny_mce/jquery.tinymce' unless skip_js_include
+:javascript
+  jQuery(document).ready(function(){
+    $('##{tinymce.to_s}').tinymce({
+      script_url: "/javascripts/tiny_mce/tiny_mce.js",
+      theme : "advanced",
+      theme_advanced_buttons1 : "undo,redo,separator,bold,italic,underline,separator,justifyleft,justifycenter,justifyright,justifyfull",
+      theme_advanced_buttons2: "",
+      theme_advanced_buttons3: "",
+      theme_advanced_buttons4: "",
+      theme_advanced_toolbar_location : "top",
+      theme_advanced_toolbar_align : "left"
+    });
+  });

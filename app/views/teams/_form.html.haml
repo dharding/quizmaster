@@ -1,0 +1,11 @@
+= form_item form, :name, :required => true
+= form_item form, :captain_id, :options => User.find(:all, :order => 'last_name, first_name').collect {|u| [u.name, u.id]}.unshift(['Select a captain', ''])
+#members
+  - form.object.members.each_with_index do |m, i|
+    = render :partial => 'member', :locals => {:team => form.object, :include_label => i.zero?}, :object => m
+.form_item
+  .label
+    \&nbsp;
+  .field
+    = add_member_link "Add a Member"
+  .message

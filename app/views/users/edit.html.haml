@@ -1,0 +1,9 @@
+#profile
+  %h1 Update Profile
+  = error_messages_for "user", :header_message => "Unable to Update Your Profile", :message => "We had some problems updating your profile:" 
+  - form_for @user, :url => user_path(@user), :html => { :multipart => true } do |f|
+    = render :partial => 'form', :object => f
+    .clear
+    .form_item
+      .button
+        = f.submit "Update Profile"

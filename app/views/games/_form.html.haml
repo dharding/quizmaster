@@ -1,0 +1,3 @@
+= form_item form, :rounds, :required => true
+= form_item form, :questions_per_round, :required => true
+= form_item form, :teams, :type => :matrix, :options => Team.all.collect {|t| [t.name, t.id]}, :cols => 2, :check_method => :has_team?

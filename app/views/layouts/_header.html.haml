@@ -1,0 +1,13 @@
+.fl
+  %a{:href => root_url, :title => "AchieveNext.com"}
+    %h1 Quiz Master
+.fr
+  - if logged_in?
+    &= "Welcome, #{current_user.name}"
+    \&nbsp;|&nbsp;
+    %a{:href => logout_path, :title => "Logout"} Logout
+  - else
+    %a{:href => login_path, :title => "Log In"} Log In
+    \&nbsp;|&nbsp;
+    %a{:href => signup_path, :title => "Register"} Register
+        

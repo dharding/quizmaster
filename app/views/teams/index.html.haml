@@ -1,0 +1,29 @@
+= fl
+#teams
+  %h1 Teams
+  %table.list
+    %thead
+      - if current_user.admin?
+        %tr
+          %th{:colspan => current_user.admin? ? 4 : 3}
+            = button_to "Add Team", new_team_path, :method => :get
+      %tr.hdr
+        %th Team Name
+        %th Captain
+        %th Members
+        -if current_user.admin? 
+          %th Actions
+    %tbody
+      - @teams.each do |team|
+        %tr
+          %td&= team.name
+          %td&= team.captain.nil? ? "No Captain Yet" : team.captain.name
+          %td&= team.member_names
+          - if current_user.admin?
+            %td
+              = button_to "Edit", edit_team_path(team), :method => :get
+              = button_to "Delete", team, :method => :delete
+    %tfoot
+      %tr
+        %td{:colspan => current_user.admin? ? 4 : 3}
+          = will_paginate @teams

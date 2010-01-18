@@ -1,0 +1,28 @@
+= fl
+.admin.grid_10.alpha
+  %h1 Registered Users
+  %table{ :width => "100%" }
+    %thead
+      %tr
+        %th Name
+        %th Email
+        %th Enabled
+        %th Actions
+
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td&= user.name
+          %td&= user.email
+          %td= user.active? ? 'Yes' : 'No'
+          %td
+            - if user.active?
+              = link_to 'Disable', {:controller => :users, :action => :disable, :id => user.id}, :confirm => "Are you sure you want to disable user '#{user.name}'?", :method => :post
+            - else
+              = link_to 'Enable', {:action => :enable, :id => user.id}, :confirm => "Are you sure you want to enable user '#{user.name}'?", :method => :post
+            |
+            = link_to 'Reset Password', {:action => :request_reset_password, :id => user.id}, :confirm => "Are you sure you want to send a reset password e-mail to '#{user.name}'?", :method => :post
+
+  = will_paginate @users
+  
+

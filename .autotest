@@ -1,0 +1,7 @@
+require 'autotest/growl'
+
+Autotest.add_hook :initialize do |autotest|
+  %w{rerun.txt .git .svn .hg .DS_Store db log tml vendor ._* .sqlite2}.each do |exception|
+    autotest.add_exception(exception)
+  end
+end

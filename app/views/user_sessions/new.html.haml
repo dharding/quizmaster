@@ -1,0 +1,24 @@
+= render :partial => 'shared/flash', :object => flash if flash.present?
+.login.grid_10.alpha
+  %h1 Sign In
+  = error_messages_for "user_session", :header_message => "Unable to Sign You In", :message => ""
+  - form_for @user_session do |f|
+    .grid_10.alpha.omega
+      .form_item.prefix_2.suffix_2
+        .grid_2.alpha
+          = f.label :email
+        .grid_3.omega
+          = f.text_field :email
+      .clear
+      .form_item.prefix_2.suffix_2
+        .grid_2.alpha
+          = f.label :password
+        .grid_3.omega
+          = f.password_field :password
+      .clear
+      .grid_10.alpha.omega.prefix_5
+        .grid_2.alpha
+          .button
+            %button Sign In
+      .clear
+.clear

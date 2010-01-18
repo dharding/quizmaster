@@ -1,0 +1,16 @@
+.member
+  - fields_for_member(member) do |member_form|
+    - name = member.new_record? ? 'new_members' : 'existing_members'
+    .form_item
+      .label
+        \&nbsp;
+      .field
+        - if member.new_record?
+          = select_tag "team[#{name}][]", member_options_for_select(@team, member.id)
+        - else
+          &= member.name
+          = member_form.hidden_field :id
+      .message
+        = link_to_function "remove", "jQuery(this).closest('.member').remove()"
+
+  

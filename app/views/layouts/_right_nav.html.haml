@@ -1,0 +1,6 @@
+/ = render :partial => "shared/search"
+/ .clear
+/ - if logged_in?
+/   = render :partial => "shared/community_feed"
+/ - elsif !["users", "beta_invitations"].include?(@controller.controller_name) && BETA
+/   = render :partial => "shared/beta_signup_small"

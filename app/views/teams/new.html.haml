@@ -1,0 +1,9 @@
+#team
+  %h1 New Team
+  = error_messages_for "team", :header_message => "Unable to Create Team", :message => "We had some problems creating the team:"
+  - form_for @team do |f|
+    = render :partial => 'form', :object => f
+    .clear
+    .form_item
+      .button
+        = f.submit "Add Team"

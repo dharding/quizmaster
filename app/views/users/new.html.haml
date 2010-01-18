@@ -1,0 +1,9 @@
+#registration
+  %h1 Registration
+  = error_messages_for "user", :header_message => "Unable to Register Your Account", :message => "We had some problems registering your account:"
+  - form_for @user, :url => account_path do |f|
+    = render :partial => 'form', :object => f
+    .clear
+    .form_item
+      .button
+        = f.submit "Register"

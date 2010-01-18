@@ -1,0 +1,5 @@
+= rte [:question_ask, :question_answer]
+= form_item form, :ask, :required => true
+= form_item form, :answer, :required => true
+= form_item form, :difficulty, :required => true, :options => Question::DIFFICULTIES
+= form_item form, :tag_list

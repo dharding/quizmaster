@@ -1,0 +1,10 @@
+%h1&= @team.name
+%dl
+  %dt
+    Captain
+  %dd
+    = @team.captain.nil? ? "No Captain Yet" : @team.captain.name
+%dl
+  %dt
+    Members
+    %dd&= @team.member_names

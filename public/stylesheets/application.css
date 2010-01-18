@@ -1,0 +1,370 @@
+html, body {
+  height: 100%;
+  background: url(/images/bg.gif) repeat scroll 0 0;
+  color: #222;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+
+h1 {
+  border-bottom: 1px solid #ccc;
+  color: #196790; }
+
+dl {
+  clear: left; }
+  dl dt {
+    font-weight: bolder;
+    float: left; }
+  dl dd {
+    float: left;
+    margin-left: 0.8em; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+#header {
+  background-color: #003B57;
+  height: 100px;
+  padding-top: 0.5em;
+  color: #fff;
+  border: none; }
+
+#header a {
+  color: #B1D035; }
+
+#content {
+  overflow: hidden;
+  background-color: #EFFAFB;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc; }
+
+#ln {
+  margin-left: 0;
+  margin-right: 0;
+  width: 180px; }
+  #ln ul {
+    background-color: #EFFAFB;
+    list-style: none;
+    list-style-type: none;
+    text-transform: uppercase;
+    text-align: left; }
+    #ln ul li {
+      line-height: 25px;
+      margin-left: 0;
+      padding-left: 10px;
+      border-bottom: 1px solid #abbfc9;
+      display: block;
+      background: url(/images/tabs/tab3.gif) repeat-x; }
+      #ln ul li a {
+        font-size: 0.8em;
+        font-weight: bold;
+        text-decoration: none;
+        color: #00002f; }
+    #ln ul li.active {
+      background: url(/images/tabs/tab2.gif) repeat-x; }
+      #ln ul li.active a {
+        color: #fff; }
+    #ln ul li.last {
+      background: url('/images/gradient.jpg') repeat-x;
+      height: 100%; }
+
+#mc {
+  margin-left: 0;
+  margin-right: 0;
+  width: 598px;
+  background-color: #fff;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  min-height: 400px; }
+
+#rn {
+  margin-left: 0;
+  margin-right: 0;
+  width: 180px;
+  background-color: #fff; }
+
+#footer {
+  width: 100%;
+  float: left;
+  height: 50px;
+  color: #fff;
+  background-color: #003B57; }
+
+#footer a {
+  color: #B1D035; }
+
+#footer p {
+  padding: 0.3em; }
+
+#intro_video {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px; }
+
+#flash {
+  margin: 10px;
+  background-color: #E9F7FE;
+  border: 1px solid #C1DBF2;
+  padding: 5px;
+  clear: both; }
+
+table.list {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto; }
+  table.list thead tr th {
+    border-bottom: 1px solid #ccc; }
+  table.list thead tr.hdr {
+    background-color: #c3d9ff;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc; }
+  table.list tbody tr {
+    border-bottom: 1px solid #ccc; }
+    table.list tbody tr td {
+      padding: 0.3em; }
+  table.list tbody tr.even {
+    background-color: #eee; }
+  table.list tfoot tr {
+    background-color: #c3d9ff;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc; }
+
+input[type=submit], button {
+  border-top: 0;
+  border-left: 0;
+  border-bottom: 0;
+  border-right: 0;
+  margin: 0;
+  padding: 0;
+  height: 20px; }
+
+.formError {
+  color: red; }
+
+.button, .button-to div {
+  margin-top: 5px;
+  background: url(/images/buttons/gr1.png) no-repeat right top;
+  float: right;
+  padding-right: 6px; }
+  .button button, .button input[type=submit], .button-to div button, .button-to div input[type=submit] {
+    text-align: center;
+    background: url(/images/buttons/gr1.png) no-repeat;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 2px 2px 2px 10px;
+    cursor: pointer; }
+
+button {
+  cursor: pointer; }
+
+input[type="text"], input[type="password"], textarea {
+  padding: 2px;
+  border: 1px solid #bbb; }
+
+input[type="file"] {
+  border: none; }
+
+.file_uploader input[type=file] {
+  position: relative;
+  text-align: right;
+  -moz-opacity: 0;
+  filter: alpha(opacity: 0);
+  opacity: 0;
+  z-index: 2;
+  width: 100%; }
+.file_uploader .fake_file_uploader {
+  position: relative;
+  width: 100%;
+  margin-top: -28px; }
+  .file_uploader .fake_file_uploader .filename {
+    overflow: hidden;
+    width: 200px;
+    float: left;
+    margin-top: 5px; }
+
+.errorExplanation {
+  background-color: #FFEA5B;
+  border: 1px solid #CAC479;
+  padding: 5px;
+  margin-bottom: 10px;
+  clear: both; }
+
+.errorExplanation h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.3em; }
+
+.errorExplanation ul {
+  margin-bottom: 0; }
+
+.errorExplanation p {
+  margin-bottom: 5px; }
+
+fieldset {
+  clear: left;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding-left: 1.0em;
+  padding-top: 0;
+  padding-bottom: 1.0em;
+  margin-bottom: 4.0em; }
+  fieldset legend {
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding-left: 0.3em;
+    padding-right: 0.3em; }
+
+.form_item {
+  padding-top: 10px;
+  clear: left;
+  width: 100%; }
+  .form_item .label {
+    padding-right: 5px;
+    float: left;
+    width: 150px; }
+    .form_item .label label {
+      float: right;
+      padding-right: 4px;
+      text-align: right; }
+    .form_item .label em {
+      display: none;
+      color: red;
+      float: right; }
+  .form_item .field {
+    float: left;
+    margin-right: 10px; }
+    .form_item .field input.zipcode {
+      width: 8em; }
+  .form_item .message {
+    float: left;
+    text-align: left; }
+  .form_item .matrix label {
+    float: left;
+    text-align: left;
+    width: auto;
+    padding-left: 2px;
+    padding-right: 10px; }
+  .form_item .matrix input {
+    float: left; }
+
+.form_item.required .label label {
+  padding-right: 0; }
+.form_item.required .label em {
+  display: inline; }
+
+.form_item.terms .label {
+  width: 300px; }
+
+.form_item.ack .label, form_item.terms .label {
+  width: 300px; }
+
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+  border-color: #666666; }
+
+.privacy {
+  font-size: 0.8em;
+  font-style: italic;
+  color: #666;
+  line-height: 2.0em; }
+
+#profile, #registration, #article, #topic, #post {
+  overflow: hidden;
+  padding: 10px;
+  margin-top: 1.0em; }
+
+#profile .message {
+  display: none; }
+#profile img {
+  border: 2px solid #ccc;
+  float: left;
+  margin-right: 1.0em; }
+#profile .namebar {
+  font-size: 1.2em;
+  font-weight: bolder;
+  overflow: hidden; }
+  #profile .namebar .name {
+    float: left; }
+  #profile .namebar .actions {
+    float: right; }
+  #profile .namebar form {
+    float: right;
+    overflow: hidden; }
+#profile .details {
+  margin-top: 1.0em;
+  overflow: hidden; }
+#profile .summary dl {
+  padding-top: 1.0em;
+  overflow: hidden;
+  margin-bottom: 1.0em;
+  margin-top: 0; }
+  #profile .summary dl dt, #profile .summary dl dd {
+    clear: left; }
+
+#mini-beta-signup, #mini-search {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-top: 1px solid #ccc; }
+  #mini-beta-signup .strong, #mini-search .strong {
+    font-size: 0.75em;
+    color: #6CBD45;
+    font-weight: bold;
+    text-transform: uppercase; }
+  #mini-beta-signup .form_item, #mini-search .form_item {
+    overflow: hidden;
+    margin-bottom: 0.3em;
+    text-align: right;
+    font-size: 0.75em; }
+    #mini-beta-signup .form_item label, #mini-search .form_item label {
+      line-height: 20px;
+      float: right;
+      margin-right: 3px; }
+      #mini-beta-signup .form_item label em, #mini-search .form_item label em {
+        color: red; }
+    #mini-beta-signup .form_item input, #mini-search .form_item input {
+      width: 95px;
+      clear: right;
+      float: right; }
+
+#mini-search {
+  padding: 0; }
+  #mini-search .advanced {
+    display: none; }
+
+#mini-search .form {
+  padding: 10px; }
+
+#mini-search .fr {
+  cursor: pointer; }
+
+#mini-search .header {
+  padding: 3px;
+  background: url(/images/tabs/tab3.gif) repeat-x;
+  overflow: hidden;
+  color: #196790;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8em; }
+  #mini-search .header .fr {
+    padding-top: 1px;
+    font-size: 0.8em; }
+
+.login {
+  margin: 10px; }
+
+.login label {
+  float: right; }
+
+.login .form_item {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.login input {
+  width: 154px; }
+
+.login .errorExplanation h2 {
+  display: none; }
+.login .errorExplanation p {
+  display: none; }
+.login .errorExplanation ul {
+  list-style: none;
+  list-style-type: none; }

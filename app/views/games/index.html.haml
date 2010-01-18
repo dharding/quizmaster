@@ -1,0 +1,31 @@
+= fl
+#games
+  %h1 Games
+  %table.list
+    %thead
+      - if current_user.admin?
+        %tr
+          %th{:colspan => current_user.admin? ? 3 : 2}
+            = button_to "Add Game", new_game_path, :method => :get
+      %tr.hdr
+        %th Teams
+        %th Current State
+        -if current_user.admin? 
+          %th Actions
+    %tbody
+      - @games.each do |game|
+        %tr
+          %td&= game.teams.collect(&:name).join(', ')
+          %td&= "Question #{game.current_question}/#{game.questions_per_round} of round #{game.current_round}/#{game.rounds}"
+          - if current_user.admin?
+            %td
+              - if game.started?
+                = button_to "Continue", continue_game_path(game), :method => :get unless game.complete?
+              - else
+                = button_to "Start", start_game_path(game), :method => :get unless game.complete?
+              = button_to "Edit", edit_game_path(game), :method => :get
+              = button_to "Delete", game, :method => :delete
+    %tfoot
+      %tr
+        %td{:colspan => current_user.admin? ? 3 : 2}
+          = will_paginate @games

@@ -1,0 +1,32 @@
+div#login {
+  background-color: #ccc;
+  padding: 0.3em;
+  border: 1px solid #333;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+div#login label {
+  font-weight: bolder;
+  text-align: right;
+  width: 7em;
+  display: inline-block;
+  margin-right: 0.3em;
+}
+
+div#login div.form-buttons {
+  text-align: left;
+  margin-left: 9.3em;
+}
+
+div#content {
+  margin-top: 10em;
+  border: none;
+}
+
+div#footer {
+  background-color: #fff;
+  border: none;
+}

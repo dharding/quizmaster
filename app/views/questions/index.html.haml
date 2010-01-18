@@ -1,0 +1,29 @@
+= fl
+#questions
+  %h1 Questions
+  %table.list
+    %thead
+      - if current_user.admin?
+        %tr
+          %th{:colspan => current_user.admin? ? 4 : 3}
+            = button_to "Add Question", new_question_path, :method => :get
+      %tr.hdr
+        %th Ask
+        %th Difficulty
+        %th Tags
+        -if current_user.admin? 
+          %th Actions
+    %tbody
+      - @questions.each do |question|
+        %tr
+          %td!= question.ask
+          %td&= Question::DIFFICULTIES[question.difficulty - 1][0]
+          %td&= question.tag_list
+          - if current_user.admin?
+            %td
+              = button_to "Edit", edit_question_path(question), :method => :get
+              = button_to "Delete", question, :method => :delete
+    %tfoot
+      %tr
+        %td{:colspan => current_user.admin? ? 4 : 3}
+          = will_paginate @questions
