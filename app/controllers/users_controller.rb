@@ -13,11 +13,15 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    @user.active = true
     User.transaction do
-      if @user.save_without_session_maintenance
-        @user.deliver_activation_instructions!
-        flash[:notice] = "Your account has been created. Please check your e-mail for activation instructions."
-        redirect_back_or_default login_url
+      # if @user.save_without_session_maintenance
+      #   @user.deliver_activation_instructions!
+      #   flash[:notice] = "Your account has been created. Please check your e-mail for activation instructions."
+      #   redirect_back_or_default login_url
+      if @user.save
+        flash[:notice] = "Your account has been created."
+        redirect_back_or_default root_url
       else
         render :action => :new
       end
