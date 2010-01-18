@@ -27,4 +27,4 @@ config.action_view.cache_template_loading            = true
 # Enable threaded mode
 # config.threadsafe!
 
-HOST = "quizmaster.heroku.com"
+HOST = "quizzy.heroku.com"
