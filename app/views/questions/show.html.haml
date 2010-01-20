@@ -7,17 +7,31 @@
 - else
   = "Round #{@game.current_round} of #{@game.rounds}, Question #{@game.current_question} of #{@game.questions_per_round}"
   - if current_user.admin?
+    .points
+      Worth 
+      = pluralize(@game_question.question.difficulty, "point")
     .ask!= @game_question.question.ask
-    .points= pluralize(@game_question.question.difficulty, "points")
     - if @game_question.locked?
-      - @game_question.answers.each do |a|
-        .answer
-          %h3.team&= a.team.name
-          .content!= a.content
-          .action.fl
-            - unless a.correct?
-              = button_to "Correct", correct_game_question_answer_path(@game, @game_question.question, a)
-        .clear
+      .answers
+        %h2
+          Correct Answer
+        .correct= @game_question.question.answer
+        %h2
+          Team Answers
+        - @game_question.answers.each do |a|
+          .answer
+            %h3.team&= a.team.name
+            .content!= a.content
+            .action.fl
+              - unless a.correct?
+                - form_for "answer", :url => correct_game_question_answer_path(@game, @game_question.question, a) do |f|
+
+                  .form_item
+                    
+                    .button
+                      = f.submit "Corrent"
+                    = text_field_tag "points", @game_question.question.difficulty, :size => 2
+          .clear
       .clear
       = button_to "Next Question", next_game_questions_path(@game)
     - else

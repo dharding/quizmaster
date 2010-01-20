@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100117220514) do
+ActiveRecord::Schema.define(:version => 20100120120430) do
 
   create_table "answers", :force => true do |t|
     t.integer  "games_question_id",                    :null => false
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20100117220514) do
     t.boolean  "correct",           :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "points",            :default => 0
   end
 
   create_table "games", :force => true do |t|

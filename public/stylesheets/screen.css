@@ -101,6 +101,33 @@ dl {
   .ask p {
     margin: 0; }
 
+.points {
+  font-size: 1.5em; }
+
+.answers h2 {
+  border-bottom: 1px solid #ccc; }
+
+.answer .content {
+  font-size: 1.6em; }
+  .answer .content p {
+    margin: 0; }
+.answer .action {
+  margin-bottom: 20px; }
+.answer form {
+  float: left; }
+  .answer form input {
+    margin-top: 1px;
+    margin-right: 5px; }
+  .answer form .button {
+    margin: 0; }
+    .answer form .button input {
+      margin: 0; }
+
+.correct {
+  font-size: 3.5em; }
+  .correct p {
+    margin: 0; }
+
 table.list {
   width: 95%;
   margin-left: auto;
@@ -213,7 +240,7 @@ fieldset {
   .form_item .label {
     padding-right: 5px;
     float: left;
-    width: 150px; }
+    width: 160px; }
     .form_item .label label {
       float: right;
       padding-right: 4px;

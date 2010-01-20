@@ -74,7 +74,8 @@ class Game < ActiveRecord::Base
     self.asked_questions.each do |asked|
       asked.answers.each do |answer|
         if answer.correct?
-          bleh[answer.team_id] += asked.question.difficulty
+          bleh[answer.team_id] += answer.points
+          # asked.question.difficulty
         end
       end
     end

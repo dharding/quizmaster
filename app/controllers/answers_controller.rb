@@ -30,6 +30,7 @@ class AnswersController < ApplicationController
   def correct
     @answer = Answer.find(params[:id])
     @answer.correct = true
+    @answer.points = params[:points]
     @answer.save
     @game = Game.find(:all, :conditions => {:started => true, :complete => false}).first
     redirect_to game_question_path(@game, @answer.asked_question)
