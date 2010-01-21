@@ -10,4 +10,8 @@ class Question < ActiveRecord::Base
   
   has_many :games_questions
   has_many :games, :through => :games_questions
+  
+  def self.per_page
+    10
+  end
 end

@@ -1,6 +1,7 @@
 = fl
 #questions
-  %h1 Questions
+  %h1
+    = "Questions (#{Question.count} total)"
   %table.list
     %thead
       - if current_user.admin?
