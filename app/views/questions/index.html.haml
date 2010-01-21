@@ -6,7 +6,9 @@
     %thead
       - if current_user.admin?
         %tr
-          %th{:colspan => current_user.admin? ? 4 : 3}
+          %th{:colspan => current_user.admin? ? 3 : 2}
+            = will_paginate @questions
+          %th
             = button_to "Add Question", new_question_path, :method => :get
       %tr.hdr
         %th Ask
