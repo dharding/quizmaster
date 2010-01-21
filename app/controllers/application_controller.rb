@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   
 protected
   def page_title
-    "Quiz Master"
+    "Quizzy"
   end
 
 private
