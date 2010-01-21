@@ -1,13 +1,16 @@
 = fl
 #questions
   %h1
-    = "Questions (#{Question.count} total)"
+    - if @tag
+      = "Questions tagged '#{@tag}' (#{@questions.count} total)"
+    - else
+      = "Questions (#{Question.count} total)"
   %table.list
     %thead
       - if current_user.admin?
         %tr
           %th{:colspan => current_user.admin? ? 3 : 2}
-            = will_paginate @questions
+            = will_paginate @questions unless @tag
           %th
             = button_to "Add Question", new_question_path, :method => :get
       %tr.hdr
@@ -29,4 +32,4 @@
     %tfoot
       %tr
         %td{:colspan => current_user.admin? ? 4 : 3}
-          = will_paginate @questions
+          = will_paginate @questions  unless @tag

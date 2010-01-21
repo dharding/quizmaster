@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
   before_filter :require_user
   before_filter :require_admin, :except => [:show, :answer, :current]
   before_filter :fetch_game
+  before_filter :tag_cloud
   
   def index
     if @game
@@ -13,6 +14,12 @@ class QuestionsController < ApplicationController
     else
       @questions = Question.paginate :page => params[:page]
     end
+  end
+  
+  def tag
+    @tag = params[:id]
+    @questions = Question.tagged_with(params[:id], :on => :tags)
+    render :template => 'questions/index'
   end
   
   def show
@@ -31,7 +38,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(params[:question])
     if @question.save
       flash[:notice] = "Question created"
-      redirect_back_or_default questions_url
+      redirect_to questions_url
     else
       render :action => :new
     end
@@ -45,7 +52,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     if @question.update_attributes(params[:question])
       flash[:notice] = "Question updated"
-      redirect_back_or_default questions_url
+      redirect_to questions_url
     else
       render :action => :edit
     end
@@ -54,7 +61,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
-    redirect_back_or_default questions_url
+    redirect_to questions_url
   end
   
   def current
@@ -111,5 +118,9 @@ class QuestionsController < ApplicationController
 private
   def fetch_game
     @game = Game.find(params[:game_id]) if params[:game_id]
+  end
+  
+  def tag_cloud
+    @tags = Question.tag_counts_on(:tags)
   end
 end

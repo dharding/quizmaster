@@ -8,7 +8,7 @@ ActionController::Routing::Routes.draw do |map|
   map.activate '/activate/:id', :controller => 'activations', :action => 'create'
   map.resources :user_sessions
   map.resources :users
-  map.resources :questions
+  map.resources :questions, :collection => {:tag => :get}
   map.resources :teams
   map.resources :games, :member => {:start => :get, :continue => :get} do |games|
     games.resources :questions, :collection => {:current => :get, :next => :post, :lock => :post}, :member => {:answer => :post} do |qs|

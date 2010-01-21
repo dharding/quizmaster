@@ -10,3 +10,8 @@
     - @game.score.each_with_index do |team_points, i|
       %li&= "#{i + 1}. #{team_points.first.name} (#{team_points.last})"
       .clear
+- if logged_in? && current_user.admin? && @controller.controller_name == 'questions'
+  Tags
+  .clear
+  - tag_cloud(@tags, %w(tag1 tag2 tag3 tag4)) do |tag, css_class|
+    = link_to tag.name, {:action => :tag, :id => tag.name}, :class => css_class
